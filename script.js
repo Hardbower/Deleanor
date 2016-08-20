@@ -1,11 +1,17 @@
 $(document).ready(function(){
   
   
-  
+  /* loader modal */
   setTimeout(function(){
     $('body').addClass('loaded');
     $('body').removeClass('modal-on');
   }, 2000);
+    
+  $(".modal-window").on("show", function () {
+    $("body").addClass("modal-on");
+  }).on("hidden", function () {
+    $("body").removeClass("modal-on")
+  });
   
   
   
@@ -45,23 +51,21 @@ $(document).ready(function(){
   
   
   
-  $(".modal-window").on("show", function () {
-    $("body").addClass("modal-on");
-  }).on("hidden", function () {
-    $("body").removeClass("modal-on")
-  });
-  
-  
-  
+  /* show/hide contact modal */
   $("#contact-button").click(function() {
-    $("#modal-contact").fadeIn(800);
-    $("#contact-exit").fadeIn(800);
+    if($("#modal-contact").is(":hidden")){
+      $("#modal-contact").fadeIn(800);
+      $("#contact-exit").fadeIn(800);
+    } else {
+      hideContact();
+    }
   });
-  $("#contact-exit").click(function() {
+  $("#contact-exit").click(function(){hideContact()});
+  function hideContact() {
     $("#modal-contact").css("pointer-events","all");
     $("#contact-exit").fadeOut(400);
     $("#modal-contact").fadeOut(800);
-  });
+  }
   
   
 });

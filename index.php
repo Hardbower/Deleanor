@@ -39,6 +39,9 @@
           <div class="row">
             <div class="modal-holder">
               <section id='modal-contact' class="modal-window">
+                <div id='contact-card'>
+                  
+                </div>
                 <div id='contact-exit' class="exit-holder" role='button'>
                   <svg class='exit-button'
                        version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

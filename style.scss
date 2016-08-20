@@ -118,6 +118,7 @@ h4.button {
   padding: 0px;
   padding-top: 7px;
   text-align: center;
+  box-shadow: -1px 1px 2px hsla(0, 0, 0, .1);
 }
 
 .exit-holder:hover .exit-button {
@@ -132,6 +133,15 @@ h4.button {
   height: 15px;
   background-color: white;
   line-height: 0;
+}
+
+#contact-card {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  bottom: 50px;
+  left: 50px;
+  background-color: azure;
 }
 
 
