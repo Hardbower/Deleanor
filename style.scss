@@ -1,6 +1,7 @@
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-family: sans-serif;
 }
 
 html,body {
@@ -8,6 +9,9 @@ html,body {
   padding: 0;
   height: 100%;
   min-width: 100%;
+}
+
+h4 {
 }
 
 img {
@@ -41,6 +45,39 @@ aside {
   background-color: yellow;
 }
 
+#email-holder {
+  background-color: crimson;
+}
+
+#contact-button {
+  display: none;
+}
+
+.block {
+  text-align: center;
+}
+ 
+.block:before {
+  content: '\200B';
+/*   content: '';
+  margin-left: -0.25em; */
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+ }
+
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  padding: 10px 15px;
+ }
+
+h4.button {
+  text-transform: uppercase;
+}
+
+
 
 /*                                                  MODALS  */
 .modal-on {
@@ -72,8 +109,8 @@ aside {
 
 .exit-holder {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 40px;
+  right: 40px;
   width: 30px;
   height: 30px;
   border-radius: 100px;
@@ -81,7 +118,6 @@ aside {
   padding: 0px;
   padding-top: 7px;
   text-align: center;
-  margin:100px;
 }
 
 .exit-holder:hover .exit-button {
@@ -245,11 +281,20 @@ aside {
 
 
 /*                                         MEDIA QUERIES  */
-
+// small
 @media (min-width: 768px) {
   
   main {
     overflow-y: auto;
+  }
+  
+}
+
+//medium
+@media (min-width: 992px) {
+  
+  #contact-button {
+    display: block;
   }
   
 }

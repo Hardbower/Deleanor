@@ -57,13 +57,16 @@
             <section id='logo-holder' class="col-md-12 hidden-sm hidden-xs">
               
             </section>
-            <section id="map-holder" class="col-md-12">
+            <section id="map-holder" class="col-md-12 col-sm-6">
                
             </section>
-            <section id="contact-holder" class="col-md-12" role="button">
-              <div role="button" id="contact-button">
-                
+            <section id="contact-holder" class="col-md-12 col-sm-6 block" >
+              <div role="button" id="contact-button" class="centered">
+                <h4 class="button">Contact</h4>
               </div>
+            </section>
+            <section id="email-holder" class="col-sm-12 hidden-md hidden-lg">
+               
             </section>
           </div>
         </aside>

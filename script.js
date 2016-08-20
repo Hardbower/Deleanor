@@ -15,27 +15,31 @@ $(document).ready(function(){
   window.onresize = function(event) {
     /* checks if resize is large enough to warrant change */
     /* used to prevent change when toolbar hides on phones */
-    //alert(Math.abs(windowSize-$(window).height()));
     if(Math.abs(windowSize-$(window).height())>150){
       setHeight();
       windowSize = $(window).height();
-      //alert("changed to "+ $(window).height());
     }
   };
   
   function setHeight() {
     /* size full-height divs to window */
     $("#view").height($(window).height());
-    /* expands scrolling pane to full size */
+    /* screen-size dependent heights */
     if($(window).width()>992){
+      /* md lg */
       $("main").height($("#view").height());
+      $("#contact-holder").css("min-height",          $(window).height()/6);
+      $("#map-holder").css("min-height", $(window).height()/2);
+      $("aside").css("min-height", $(window).height());
     } else {
+      /* xs sm */
       $("main").css("height", "100%");
+      $("#contact-holder").css("min-height", $(window).height()*0.75);
+      $("#map-holder").css("min-height", $(window).height()*0.75);
+      $("aside").css("min-height", $(window).height()*1.2);
     }
-    $("aside").height($("#view").height());
+    $("#email-holder").css("min-height", $(window).height()*.5);
     $("#logo-holder").css("min-height", $(window).height()/3);
-    $("#map-holder").css("min-height", $(window).height()/2);
-    $("#contact-holder").css("min-height",          $(window).height()/6);
     $(".modal-holder").css("min-height", $("#view").height() )
   }
   
@@ -49,7 +53,7 @@ $(document).ready(function(){
   
   
   
-  $("#contact-holder").click(function() {
+  $("#contact-button").click(function() {
     $("#modal-contact").fadeIn(800);
     $("#contact-exit").fadeIn(800);
   });
