@@ -1,11 +1,17 @@
 $(document).ready(function(){
   
   
-  
+  /* loader modal */
   setTimeout(function(){
     $('body').addClass('loaded');
     $('body').removeClass('modal-on');
   }, 2000);
+    
+  $(".modal-window").on("show", function () {
+    $("body").addClass("modal-on");
+  }).on("hidden", function () {
+    $("body").removeClass("modal-on")
+  });
   
   
   
@@ -33,6 +39,8 @@ $(document).ready(function(){
       $("aside").css("min-height", $(window).height());
     } else {
       /* xs sm */
+      alert("d");
+      hideContact();
       $("main").css("height", "100%");
       $("#contact-holder").css("min-height", $(window).height()*0.75);
       $("#map-holder").css("min-height", $(window).height()*0.75);
@@ -40,28 +48,114 @@ $(document).ready(function(){
     }
     $("#email-holder").css("min-height", $(window).height()*.5);
     $("#logo-holder").css("min-height", $(window).height()/3);
-    $(".modal-holder").css("min-height", $("#view").height() )
+    $(".modal-holder").css("min-height", $("#view").height() );
   }
   
   
   
-  $(".modal-window").on("show", function () {
-    $("body").addClass("modal-on");
-  }).on("hidden", function () {
-    $("body").removeClass("modal-on")
-  });
+  function initMap() {
+    var map;
+    map = new google.maps.Map(document.getElementById('card-map'), {
+      center: {lat: 37.557218, lng: -77.453039},
+      zoom: 15,
+      styles: [
+                {
+                    "featureType": "all",
+                    "elementType": "labels.text",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "all",
+                    "elementType": "labels.icon",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#f1efe8"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape.natural",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#f1efe8"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#b2ac83"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#b2ac83"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "labels.icon",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#8ac0c4"
+                        }
+                    ]
+                }
+            ]
+    });
+  }
   
   
   
+  /* show/hide contact modal */
   $("#contact-button").click(function() {
-    $("#modal-contact").fadeIn(800);
-    $("#contact-exit").fadeIn(800);
+    if($("#modal-contact").is(":hidden")){
+      $("#modal-contact").fadeIn(800);
+      $("#contact-exit").fadeIn(800);
+      $("#card-map").css("min-height", $("#test").height());
+      $("#card-info").css("min-height", $("#test").height()/2);
+      $("#card-subscribe").css("min-height", $("#test").height()/2);
+      initMap();
+    } else {
+      hideContact();
+    }
   });
-  $("#contact-exit").click(function() {
+  $("#contact-exit").click(function(){hideContact()});
+  function hideContact() {
     $("#modal-contact").css("pointer-events","all");
     $("#contact-exit").fadeOut(400);
     $("#modal-contact").fadeOut(800);
-  });
+  }
   
   
 });

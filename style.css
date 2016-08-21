@@ -51,27 +51,51 @@ aside {
 }
 
 .block {
-  text-align: center;
-}
-
-.block:before {
-  content: '\200B';
-  /*   content: '';
-  margin-left: -0.25em; */
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  overflow: auto;
 }
 
 .centered {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100%;
-  padding: 10px 15px;
+  text-align: center;
+  width: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: auto;
 }
 
 h4.button {
   text-transform: uppercase;
+}
+
+.stretched {
+  position: absolute;
+  top: 25px;
+  bottom: 25px;
+  right: 40px;
+  left: 40px;
+  background-color: red;
+}
+
+#card-map {
+  background-color: aqua;
+}
+
+#card-info {
+  background-color: darkgreen;
+}
+
+#card-subscribe {
+  background-color: khaki;
+}
+
+section > .row {
+  width: 100%;
 }
 
 /*                                                  MODALS  */
@@ -113,6 +137,7 @@ h4.button {
   padding: 0px;
   padding-top: 7px;
   text-align: center;
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .exit-holder:hover .exit-button {
@@ -133,6 +158,15 @@ h4.button {
   height: 15px;
   background-color: white;
   line-height: 0;
+}
+
+#contact-card {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  bottom: 50px;
+  left: 50px;
+  background-color: azure;
 }
 
 /*                                          LOADER        */

@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="layout.css" />
     <script src="jq.js"></script>
     <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB86Kvq0s9SLigTDUyL_n4co1-5sc4Y9iE&callback=initMap"
+                      async defer>
+    </script>
     <title>Deleanor</title>
   </head>
   <body class='modal-on'>
@@ -39,6 +42,28 @@
           <div class="row">
             <div class="modal-holder">
               <section id='modal-contact' class="modal-window">
+                <div id='contact-card'>
+                  <div id='test' class="row stretched">
+                    <section id='card-map' class="col-md-6">
+                    </section>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <section id='card-info' class="col-md-12 block">
+                          <div class="centered">
+                            <h3>HOURS</h3>
+                            <p>Monday - Friday</p> 
+                            <h6>8:00am - 5:00pm</h6>
+                          </div>
+                        </section>
+                        <section id='card-subscribe' class="col-md-12">
+                          <div class="centered">
+                            <p>Subscribe</p>
+                          </div>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div id='contact-exit' class="exit-holder" role='button'>
                   <svg class='exit-button'
                        version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
