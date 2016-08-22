@@ -35,21 +35,30 @@ $(document).ready(function(){
       /* md lg */
       $("main").height($("#view").height());
       $("#contact-holder").css("min-height",          $(window).height()/6);
-      $("#map-holder").css("min-height", $(window).height()/2);
+      $("#about-holder").css("min-height", $(window).height()/2);
       $("aside").css("min-height", $(window).height());
     } else {
-      /* xs sm */
-      alert("d");
+      /* xs sm */ 
       hideContact();
       $("main").css("height", "100%");
       $("#contact-holder").css("min-height", $(window).height()*0.75);
-      $("#map-holder").css("min-height", $(window).height()*0.75);
+      $("#about-holder").css("min-height", $(window).height()*0.75);
       $("aside").css("min-height", $(window).height()*1.2);
     }
     $("#email-holder").css("min-height", $(window).height()*.5);
+    $("#map-holder").css("min-height", $(window).height()*.5);
     $("#logo-holder").css("min-height", $(window).height()/3);
     $(".modal-holder").css("min-height", $("#view").height() );
   }
+  
+  
+  
+  $("#map-holder").click(function(){
+    $("#map-holder").addClass("removed");
+  });
+  $("#map-holder").mouseleave(function(){
+    $("#map-holder").removeClass("removed");
+  });
   
   
   

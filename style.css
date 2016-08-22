@@ -34,7 +34,7 @@ aside {
   background-color: aqua;
 }
 
-#map-holder {
+#about-holder {
   background-color: gray;
 }
 
@@ -46,13 +46,33 @@ aside {
   background-color: crimson;
 }
 
+#map-holder {
+  position: relative;
+}
+
+#map-holder:before {
+  content: "\00a0";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+  background-color: rgba(26, 26, 26, 0.1);
+  cursor: pointer;
+}
+
+#map-holder.removed:before {
+  display: none;
+}
+
 #contact-button {
   display: none;
 }
 
 .block {
   position: relative;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
   overflow: auto;
 }

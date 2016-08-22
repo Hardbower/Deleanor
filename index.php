@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="layout.css" />
     <script src="jq.js"></script>
     <script src="script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB86Kvq0s9SLigTDUyL_n4co1-5sc4Y9iE&callback=initMap"
-                      async defer>
-    </script>
     <title>Deleanor</title>
   </head>
   <body class='modal-on'>
@@ -82,7 +79,7 @@
             <section id='logo-holder' class="col-md-12 hidden-sm hidden-xs">
               
             </section>
-            <section id="map-holder" class="col-md-12 col-sm-6">
+            <section id="about-holder" class="col-md-12 col-sm-6">
                
             </section>
             <section id="contact-holder" class="col-md-12 col-sm-6 block" >
@@ -93,6 +90,92 @@
             <section id="email-holder" class="col-sm-12 hidden-md hidden-lg">
                
             </section>
+            <section id='map-holder' class="col-sm-12 hidden-md hidden-lg"></section>
+            <script>function initMap() {
+              var map;
+              map = new google.maps.Map(document.getElementById('map-holder'), {
+                center: {lat: 37.557218, lng: -77.453039},
+                zoom: 15,
+                styles: [
+                          {
+                              "featureType": "all",
+                              "elementType": "labels.text",
+                              "stylers": [
+                                  {
+                                      "visibility": "off"
+                                  }
+                              ]
+                          },
+                          {
+                              "featureType": "all",
+                              "elementType": "labels.icon",
+                              "stylers": [
+                                  {
+                                      "visibility": "off"
+                                  }
+                              ]
+                          },
+                          {
+                              "featureType": "landscape",
+                              "elementType": "geometry.fill",
+                              "stylers": [
+                                  {
+                                      "color": "#f1efe8"
+                                  }
+                              ]
+                          },
+                          {
+                              "featureType": "landscape.natural",
+                              "elementType": "geometry.fill",
+                              "stylers": [
+                                  {
+                                      "color": "#f1efe8"
+                                  }
+                              ]
+                          },
+                          {
+                              "featureType": "road.highway",
+                              "elementType": "geometry.fill",
+                              "stylers": [
+                                  {
+                                      "color": "#b2ac83"
+                                  }
+                              ]
+                          },
+                          {
+                              "featureType": "road.highway",
+                              "elementType": "geometry.stroke",
+                              "stylers": [
+                                  {
+                                      "color": "#b2ac83"
+                                  }
+                              ]
+                          },
+                          {
+                              "featureType": "road.highway",
+                              "elementType": "labels.icon",
+                              "stylers": [
+                                  {
+                                      "visibility": "off"
+                                  }
+                              ]
+                          },
+                          {
+                              "featureType": "water",
+                              "elementType": "geometry.fill",
+                              "stylers": [
+                                  {
+                                      "color": "#8ac0c4"
+                                  }
+                              ]
+                          }
+                      ]
+              });
+            }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB86Kvq0s9SLigTDUyL_n4co1-5sc4Y9iE&callback=initMap"
+                      async defer>
+            </script>
           </div>
         </aside>
       </div>
